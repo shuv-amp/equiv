@@ -1,0 +1,29 @@
+# Rust build output
+/target/
+
+# Local tool and editor state
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+
+# Coverage, profiling, and temporary reports
+coverage/
+*.profraw
+*.profdata
+*.dSYM/
+*.log
+
+# Generated local scan output; checked-in benchmark fixtures stay under bench/
+/scan-out/
+/tmp/
+
+# Working notes, kept out of the published tree
+/RESEARCH.md
+/LICENSING.md
