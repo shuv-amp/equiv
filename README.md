@@ -200,6 +200,18 @@ A single witness does not license a proportion, and `Impact::point_estimate()` r
 
 ## Licence
 
-`MIT OR Apache-2.0`. Data under `bench/` and `index/`: CC-BY-4.0.
+Licensed under either of
+
+- Apache License, Version 2.0 ([`LICENSE-APACHE`](LICENSE-APACHE) or <https://www.apache.org/licenses/LICENSE-2.0>)
+- MIT licence ([`LICENSE-MIT`](LICENSE-MIT) or <https://opensource.org/licenses/MIT>)
+
+at your option. This covers everything in the repository, including the measured
+results under `bench/`.
+
+### Contribution
+
+Unless you state otherwise, any contribution you intentionally submit for
+inclusion in this work, as defined in Apache-2.0, shall be dual licensed as
+above, without any additional terms.
 
 A verification tool nobody can audit is not a verification tool.
