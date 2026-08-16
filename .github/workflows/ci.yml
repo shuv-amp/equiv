@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          toolchain: stable
+          components: rustfmt, clippy
+      - name: Check formatting
+        run: cargo fmt --all -- --check
+      - name: Check locked workspace
+        run: cargo check --workspace --all-targets --locked
+      - name: Run unit and integration tests
+        run: cargo test --workspace --all-targets --locked
+      - name: Run clippy as errors
+        run: cargo clippy --workspace --all-targets --all-features --locked -- -D warnings
+      - name: Build documentation without warnings
+        run: RUSTDOCFLAGS='-D warnings' cargo doc --workspace --all-features --no-deps --locked
+
+  e2e:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          toolchain: stable
+      - name: Run generated-probe end-to-end tests
+        run: cargo test -p equiv-harness --test e2e --locked -- --ignored --nocapture --test-threads=1
