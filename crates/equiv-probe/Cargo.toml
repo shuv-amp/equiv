@@ -1,0 +1,15 @@
+[package]
+name = "equiv-probe"
+description = "Phase 0: measure what fraction of real Rust admits sound differential analysis."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "equiv-probe"
+path = "src/main.rs"
+
+[dependencies]
+equiv-gate = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
