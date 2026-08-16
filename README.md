@@ -194,6 +194,7 @@ A single witness does not license a proportion, and `Impact::point_estimate()` r
 
 ## Documents
 
+- [`docs/FINDINGS.md`](docs/FINDINGS.md) — behavioural differences found between published patch releases
 - [`docs/CLAIMS.md`](docs/CLAIMS.md) — what is implemented, what is not, and the evidence for each
 - [`bench/probe/PHASE0.md`](bench/probe/PHASE0.md) — measured eligibility results
 - [`PLAN.md`](PLAN.md) — scope, phases, go/no-go criteria, risk register
